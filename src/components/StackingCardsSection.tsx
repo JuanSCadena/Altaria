@@ -14,7 +14,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 01",
         title: "Residencias de Horizonte",
         desc: "Diseño abierto que integra la naturaleza como un lienzo vivo, fusionando elegancia estructural con la calidez del entorno.",
-        image: "/images/salamoderna.png",
+        image: "/images/sala.png",
         accent: "ESPACIOS PREMIUM",
     },
     {
@@ -22,7 +22,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 02",
         title: "Suites de Contemplación",
         desc: "Espacios elevados donde cada ventana enmarca un fragmento de paisaje, creando una galería natural de serenidad.",
-        image: "/images/piscina.png",
+        image: "/images/dormitoriodibujo.png",
         accent: "DISEÑO INTEGRADO",
     },
     {
@@ -30,7 +30,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 03",
         title: "Estudios de Luz Natural",
         desc: "Arquitectura que respira: cada rincón calibrado para capturar la luz del día y transformarla en ambiente.",
-        image: "/images/gimnasio.png",
+        image: "/images/comedordibujo.png",
         accent: "ILUMINACIÓN NATURAL",
     },
     {
@@ -38,7 +38,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 04",
         title: "Penthouses Privados",
         desc: "El epítome del lujo discreto. Interiores expansivos coronados por terrazas con vistas panorámicas de 360°.",
-        image: "/images/canchatenis.png",
+        image: "/images/tomadesdearriba.png",
         accent: "EXCLUSIVIDAD",
     },
     {
@@ -46,7 +46,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 05",
         title: "Villas Jardín",
         desc: "Residencias con jardines privados que diluyen la frontera entre el hogar y la naturaleza circundante.",
-        image: "/images/parque.png",
+        image: "/images/entrada.png",
         accent: "NATURALEZA & HOGAR",
     },
 ];

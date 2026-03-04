@@ -10,6 +10,7 @@ import AmenitiesSection from "@/components/AmenitiesSection";
 import StackingCardsSection from "@/components/StackingCardsSection";
 import MapSection from "@/components/MapSection";
 import ArtGridSection from "@/components/ArtGridSection";
+import PhotoCollageStrip from "@/components/PhotoCollageStrip";
 
 const VIDEOS = [
     "/videos/tomaaereasinmarcacomp.mp4",
@@ -85,8 +86,13 @@ export default function Home() {
 
                 <BenefitsSection />
 
+                <PhotoCollageStrip variant="strip1" />
+
                 <LocationSection />
                 <AmenitiesSection />
+
+                <PhotoCollageStrip variant="strip2" />
+
                 <StackingCardsSection />
                 <MapSection />
                 <ArtGridSection />

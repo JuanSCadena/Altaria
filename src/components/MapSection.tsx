@@ -9,11 +9,10 @@ if (typeof window !== "undefined") {
 }
 
 const GALLERY_PHOTOS = [
-    { src: "/images/piscina.png", alt: "Piscina Altaria", w: "w-[50%] md:w-[24%]", h: "h-[220px] md:h-[380px]", pos: "top-0 left-0", rot: -3, speed: 0.8 },
-    { src: "/images/sala.png", alt: "Sala Altaria", w: "w-[45%] md:w-[20%]", h: "h-[180px] md:h-[320px]", pos: "top-[40px] md:top-[80px] left-[55%] md:left-[21%]", rot: 2, speed: 1.2 },
-    { src: "/images/parque.png", alt: "Parque Altaria", w: "w-[42%] md:w-[22%]", h: "h-[240px] md:h-[420px]", pos: "top-[20px] md:top-[30px] left-[10%] md:left-[38%]", rot: -1, speed: 1.5 },
-    { src: "/images/canchatenis.png", alt: "Club Deportivo", w: "w-[48%] md:w-[21%]", h: "h-[200px] md:h-[340px]", pos: "top-[60px] md:top-[120px] left-[52%] md:left-[57%]", rot: 4, speed: 0.9 },
-    { src: "/images/gimnasio.png", alt: "Gimnasio", w: "w-[40%] md:w-[18%]", h: "h-[170px] md:h-[280px]", pos: "top-0 left-[60%] md:left-[80%]", rot: -2, speed: 1.1 },
+    { src: "/images/emplazamiento.png", alt: "Vista Maestra", w: "w-[24%]", h: "h-[320px] md:h-[450px]", pos: "top-0 left-[0%]", rot: -6, speed: 0.8 },
+    { src: "/images/materiales.png", alt: "Inspiración", w: "w-[26%]", h: "h-[300px] md:h-[420px]", pos: "top-[30px] left-[20%]", rot: 2, speed: 1.2 },
+    { src: "/images/parque.png", alt: "Entorno", w: "w-[26%]", h: "h-[340px] md:h-[480px]", pos: "top-[15px] left-[45%]", rot: -3, speed: 1.5 },
+    { src: "/images/plano3d.png", alt: "Visualización", w: "w-[24%]", h: "h-[280px] md:h-[400px]", pos: "top-[40px] left-[70%]", rot: 5, speed: 0.9 },
 ];
 
 export default function MapSection() {

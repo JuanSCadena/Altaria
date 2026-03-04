@@ -200,7 +200,7 @@ export default function AmenitiesSection() {
                     >
                         <div className="aspect-[3/4.5] w-full overflow-hidden shadow-2xl">
                             <img
-                                src="/images/salamoderna.png"
+                                src="/images/interior.png"
                                 alt="Espacios Artimia"
                                 className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-[2s]"
                             />
@@ -254,16 +254,16 @@ export default function AmenitiesSection() {
                             <div className="flex gap-4 items-end">
                                 {/* Small square */}
                                 <div className="gallery-item w-1/3 aspect-square overflow-hidden">
-                                    <img src="/images/cuaroyoga.png" className="w-full h-full object-cover" alt="Detalle" />
+                                    <img src="/images/habitacion.png" className="w-full h-full object-cover" alt="Detalle" />
                                 </div>
                                 {/* Tall rectangle */}
                                 <div className="gallery-item w-2/3 aspect-[4/5] overflow-hidden shadow-xl">
-                                    <img src="/images/piscina.png" className="w-full h-full object-cover" alt="Amenidad" />
+                                    <img src="/images/baño.png" className="w-full h-full object-cover" alt="Amenidad" />
                                 </div>
                             </div>
                             {/* Wide image below */}
                             <div className="gallery-item w-full aspect-[16/9] overflow-hidden">
-                                <img src="/images/parque.png" className="w-full h-full object-cover" alt="Entorno" />
+                                <img src="/images/cocina.png" className="w-full h-full object-cover" alt="Entorno" />
                             </div>
                         </div>
                     </div>
