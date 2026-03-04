@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -108,10 +109,14 @@ export default function LocationSection() {
                     {/* Image Block (Left Container) */}
                     <div className="w-full md:w-5/12 relative flex justify-center md:justify-start">
                         <div ref={imageWrapperRef} className="w-[85%] md:w-full aspect-[4/5] bg-black/20 border border-primary/10 rounded-sm overflow-hidden relative shadow-2xl p-2 md:p-3">
-                            <img
-                                src="/images/tomadesdeelcielo.png"
+                            <Image
+                                src="/images/tomadesdeelcielo.jpg"
                                 alt="Altaria desde el cielo"
-                                className="w-full h-full object-cover rounded-sm filter brightness-90 saturate-50 hover:brightness-100 hover:saturate-100 transition-all duration-1000"
+                                fill
+                                sizes="(max-width: 768px) 85vw, 42vw"
+                                className="object-cover rounded-sm filter brightness-90 saturate-50 hover:brightness-100 hover:saturate-100 transition-all duration-1000"
+                                loading="lazy"
+                                quality={75}
                             />
 
                             {/* Radar/Brain Mark */}

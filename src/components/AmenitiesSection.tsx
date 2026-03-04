@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -198,11 +199,15 @@ export default function AmenitiesSection() {
                         ref={leftImageRef}
                         className="md:col-span-5 relative"
                     >
-                        <div className="aspect-[3/4.5] w-full overflow-hidden shadow-2xl">
-                            <img
-                                src="/images/interior.png"
+                        <div className="aspect-[3/4.5] w-full overflow-hidden shadow-2xl relative">
+                            <Image
+                                src="/images/interior.jpg"
                                 alt="Espacios Artimia"
-                                className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-[2s]"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
+                                className="object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-[2s]"
+                                loading="lazy"
+                                quality={75}
                             />
                         </div>
                     </div>
@@ -253,17 +258,17 @@ export default function AmenitiesSection() {
                         <div ref={galleryRef} className="flex flex-col gap-4">
                             <div className="flex gap-4 items-end">
                                 {/* Small square */}
-                                <div className="gallery-item w-1/3 aspect-square overflow-hidden">
-                                    <img src="/images/habitacion.png" className="w-full h-full object-cover" alt="Detalle" />
+                                <div className="gallery-item w-1/3 aspect-square overflow-hidden relative">
+                                    <Image src="/images/habitacion.jpg" fill sizes="(max-width: 768px) 33vw, 14vw" className="object-cover" alt="Detalle" loading="lazy" quality={70} />
                                 </div>
                                 {/* Tall rectangle */}
-                                <div className="gallery-item w-2/3 aspect-[4/5] overflow-hidden shadow-xl">
-                                    <img src="/images/amenity_bathroom.png" className="w-full h-full object-cover" alt="Amenidad" />
+                                <div className="gallery-item w-2/3 aspect-[4/5] overflow-hidden shadow-xl relative">
+                                    <Image src="/images/amenity_bathroom.jpg" fill sizes="(max-width: 768px) 66vw, 28vw" className="object-cover" alt="Amenidad" loading="lazy" quality={70} />
                                 </div>
                             </div>
                             {/* Wide image below */}
-                            <div className="gallery-item w-full aspect-[16/9] overflow-hidden">
-                                <img src="/images/cocina.png" className="w-full h-full object-cover" alt="Entorno" />
+                            <div className="gallery-item w-full aspect-[16/9] overflow-hidden relative">
+                                <Image src="/images/cocina.jpg" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" alt="Entorno" loading="lazy" quality={70} />
                             </div>
                         </div>
                     </div>

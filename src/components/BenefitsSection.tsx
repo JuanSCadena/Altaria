@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,22 +11,22 @@ if (typeof window !== "undefined") {
 
 const BENEFITS = [
     {
-        image: "/images/piscina.png",
+        image: "/images/piscina.jpg",
         title: "Aguas Cristalinas",
         desc: "Un oasis privado diseñado para la desconexión total y la contemplación profunda en el corazón de Altaria."
     },
     {
-        image: "/images/gimnasio.png",
+        image: "/images/gimnasio.jpg",
         title: "Centro de Bienestar",
         desc: "Equipamiento de primer nivel para cultivar cuerpo y mente sin salir de tu refugio privado."
     },
     {
-        image: "/images/zonabbq.png",
+        image: "/images/zonabbq.jpg",
         title: "Encuentros Culinarios",
         desc: "Áreas sociales creadas para celebrar momentos inolvidables bajo el cielo abierto y aroma de hogar."
     },
     {
-        image: "/images/canchatenis.png",
+        image: "/images/canchatenis.jpg",
         title: "Club Deportivo",
         desc: "Espacios activos para un estilo de vida de élite, rodeados de naturaleza virgen y diseño."
     }
@@ -129,11 +130,15 @@ export default function BenefitsSection() {
                     <style dangerouslySetInnerHTML={{ __html: `::-webkit-scrollbar { display: none; }` }} />
                     {BENEFITS.map((item, idx) => (
                         <div key={idx} className="flex-shrink-0 flex flex-col md:flex-row items-center h-auto md:h-[48vh] w-[85vw] md:w-auto snap-center transition-all duration-700 pb-12 md:pb-0">
-                            <div className="w-full md:w-[42vw] h-[40vh] md:h-full overflow-hidden shrink-0 pr-0 md:pr-16 mb-8 md:mb-0">
-                                <img
+                            <div className="relative w-full md:w-[42vw] h-[40vh] md:h-full overflow-hidden shrink-0 pr-0 md:pr-16 mb-8 md:mb-0">
+                                <Image
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover shadow-2xl rounded-sm"
+                                    fill
+                                    sizes="(max-width: 768px) 85vw, 42vw"
+                                    className="object-cover shadow-2xl rounded-sm"
+                                    loading="lazy"
+                                    quality={75}
                                 />
                             </div>
 

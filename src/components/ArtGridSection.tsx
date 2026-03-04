@@ -257,6 +257,7 @@ export default function ArtGridSection() {
                             muted
                             loop
                             playsInline
+                            preload="none"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                         >
                             <source
@@ -408,6 +409,7 @@ export default function ArtGridSection() {
                             muted
                             loop
                             playsInline
+                            preload="none"
                             className="absolute inset-0 w-full h-full object-cover"
                         >
                             <source

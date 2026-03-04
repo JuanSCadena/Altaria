@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -19,21 +20,21 @@ interface CollagePhoto {
 }
 
 const STRIP_1_PHOTOS: CollagePhoto[] = [
-    { src: "/images/salamoderna.png", alt: "Arquitectura Viva", aspect: "aspect-[3/4]", rotation: -2, parallaxSpeed: 0.6, delay: 0 },
-    { src: "/images/cuaroyoga.png", alt: "Zen & Calma", aspect: "aspect-[4/3]", rotation: 1.5, parallaxSpeed: 1.1, delay: 0.1 },
-    { src: "/images/interior.png", alt: "Detalle Premium", aspect: "aspect-[3/4]", rotation: -1, parallaxSpeed: 0.8, delay: 0.2 },
+    { src: "/images/salamoderna.jpg", alt: "Arquitectura Viva", aspect: "aspect-[3/4]", rotation: -2, parallaxSpeed: 0.6, delay: 0 },
+    { src: "/images/cuaroyoga.jpg", alt: "Zen & Calma", aspect: "aspect-[4/3]", rotation: 1.5, parallaxSpeed: 1.1, delay: 0.1 },
+    { src: "/images/interior.jpg", alt: "Detalle Premium", aspect: "aspect-[3/4]", rotation: -1, parallaxSpeed: 0.8, delay: 0.2 },
 ];
 
 const STRIP_2_PHOTOS: CollagePhoto[] = [
-    { src: "/images/tomadesdeelcielo.png", alt: "Perspectiva", aspect: "aspect-[3/4.5]", rotation: 0, parallaxSpeed: 0.5, delay: 0 },
-    { src: "/images/emplazamiento.png", alt: "Entorno Vida", aspect: "aspect-[3/4]", rotation: 0, parallaxSpeed: 0.8, delay: 0.15 },
-    { src: "/images/entrada.png", alt: "Bienvenida", aspect: "aspect-[3/4.5]", rotation: 0, parallaxSpeed: 0.5, delay: 0.25 },
+    { src: "/images/tomadesdeelcielo.jpg", alt: "Perspectiva", aspect: "aspect-[3/4.5]", rotation: 0, parallaxSpeed: 0.5, delay: 0 },
+    { src: "/images/emplazamiento.jpg", alt: "Entorno Vida", aspect: "aspect-[3/4]", rotation: 0, parallaxSpeed: 0.8, delay: 0.15 },
+    { src: "/images/entrada.jpg", alt: "Bienvenida", aspect: "aspect-[3/4.5]", rotation: 0, parallaxSpeed: 0.5, delay: 0.25 },
 ];
 
 const STRIP_3_PHOTOS: CollagePhoto[] = [
-    { src: "/images/amenity_bathroom.png", alt: "Privacidad", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.7, delay: 0 },
-    { src: "/images/cocina.png", alt: "Vanguardia", aspect: "aspect-square", rotation: 0, parallaxSpeed: 1.2, delay: 0.1 },
-    { src: "/images/habitacion.png", alt: "Descanso", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.9, delay: 0.2 },
+    { src: "/images/amenity_bathroom.jpg", alt: "Privacidad", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.7, delay: 0 },
+    { src: "/images/cocina.jpg", alt: "Vanguardia", aspect: "aspect-square", rotation: 0, parallaxSpeed: 1.2, delay: 0.1 },
+    { src: "/images/habitacion.jpg", alt: "Descanso", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.9, delay: 0.2 },
 ];
 
 interface PhotoCollageStripProps {
@@ -151,10 +152,14 @@ export default function PhotoCollageStrip({ variant }: PhotoCollageStripProps) {
                                         className={`${photo.aspect} w-full overflow-hidden rounded-[2px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] relative`}
                                         style={{ transform: `rotate(${photo.rotation}deg)` }}
                                     >
-                                        <img
+                                        <Image
                                             src={photo.src}
                                             alt={photo.alt}
-                                            className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
+                                            fill
+                                            sizes="(max-width: 768px) 85vw, 33vw"
+                                            className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
+                                            loading="lazy"
+                                            quality={70}
                                         />
 
                                         {/* Overlays */}

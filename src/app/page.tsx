@@ -62,6 +62,7 @@ export default function Home() {
                         autoPlay
                         muted
                         playsInline
+                        preload="metadata"
                         onEnded={handleVideoEnd}
                         className="absolute inset-0 w-full h-full object-cover object-center z-[-2]"
                     >

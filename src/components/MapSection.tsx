@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,10 +10,10 @@ if (typeof window !== "undefined") {
 }
 
 const GALLERY_PHOTOS = [
-    { src: "/images/emplazamiento.png", alt: "Vista Maestra", w: "w-[24%]", h: "h-[320px] md:h-[450px]", pos: "top-0 left-[0%]", rot: -6, speed: 0.8 },
-    { src: "/images/materiales.png", alt: "Inspiración", w: "w-[26%]", h: "h-[300px] md:h-[420px]", pos: "top-[30px] left-[20%]", rot: 2, speed: 1.2 },
-    { src: "/images/parque.png", alt: "Entorno", w: "w-[26%]", h: "h-[340px] md:h-[480px]", pos: "top-[15px] left-[45%]", rot: -3, speed: 1.5 },
-    { src: "/images/plano3d.png", alt: "Visualización", w: "w-[24%]", h: "h-[280px] md:h-[400px]", pos: "top-[40px] left-[70%]", rot: 5, speed: 0.9 },
+    { src: "/images/emplazamiento.jpg", alt: "Vista Maestra", w: "w-[24%]", h: "h-[320px] md:h-[450px]", pos: "top-0 left-[0%]", rot: -6, speed: 0.8 },
+    { src: "/images/materiales.jpg", alt: "Inspiración", w: "w-[26%]", h: "h-[300px] md:h-[420px]", pos: "top-[30px] left-[20%]", rot: 2, speed: 1.2 },
+    { src: "/images/parque.jpg", alt: "Entorno", w: "w-[26%]", h: "h-[340px] md:h-[480px]", pos: "top-[15px] left-[45%]", rot: -3, speed: 1.5 },
+    { src: "/images/plano3d.jpg", alt: "Visualización", w: "w-[24%]", h: "h-[280px] md:h-[400px]", pos: "top-[40px] left-[70%]", rot: 5, speed: 0.9 },
 ];
 
 export default function MapSection() {
@@ -214,10 +215,14 @@ export default function MapSection() {
                                 className={`absolute ${photo.pos} ${photo.w} ${photo.h} overflow-hidden rounded-sm shadow-2xl group transition-shadow duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]`}
                                 style={{ transform: `rotate(${photo.rot}deg)` }}
                             >
-                                <img
+                                <Image
                                     src={photo.src}
                                     alt={photo.alt}
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    fill
+                                    sizes="(max-width: 768px) 50vw, 26vw"
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    loading="lazy"
+                                    quality={70}
                                 />
                                 {/* Subtle overlay border glow */}
                                 <div className="absolute inset-0 border border-white/5 pointer-events-none" />

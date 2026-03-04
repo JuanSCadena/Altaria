@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,7 +15,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 01",
         title: "Residencias de Horizonte",
         desc: "Diseño abierto que integra la naturaleza como un lienzo vivo, fusionando elegancia estructural con la calidez del entorno.",
-        image: "/images/sala.png",
+        image: "/images/sala.jpg",
         accent: "ESPACIOS PREMIUM",
     },
     {
@@ -22,7 +23,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 02",
         title: "Suites de Contemplación",
         desc: "Espacios elevados donde cada ventana enmarca un fragmento de paisaje, creando una galería natural de serenidad.",
-        image: "/images/dormitoriodibujo.png",
+        image: "/images/dormitoriodibujo.jpg",
         accent: "DISEÑO INTEGRADO",
     },
     {
@@ -30,7 +31,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 03",
         title: "Estudios de Luz Natural",
         desc: "Arquitectura que respira: cada rincón calibrado para capturar la luz del día y transformarla en ambiente.",
-        image: "/images/comedordibujo.png",
+        image: "/images/comedordibujo.jpg",
         accent: "ILUMINACIÓN NATURAL",
     },
     {
@@ -38,7 +39,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 04",
         title: "Penthouses Privados",
         desc: "El epítome del lujo discreto. Interiores expansivos coronados por terrazas con vistas panorámicas de 360°.",
-        image: "/images/tomadesdearriba.png",
+        image: "/images/tomadesdearriba.jpg",
         accent: "EXCLUSIVIDAD",
     },
     {
@@ -46,7 +47,7 @@ const TIPOLOGIAS = [
         label: "TIPOLOGÍA 05",
         title: "Villas Jardín",
         desc: "Residencias con jardines privados que diluyen la frontera entre el hogar y la naturaleza circundante.",
-        image: "/images/entrada.png",
+        image: "/images/entrada.jpg",
         accent: "NATURALEZA & HOGAR",
     },
 ];
@@ -187,6 +188,7 @@ export default function StackingCardsSection() {
                         muted
                         loop
                         playsInline
+                        preload="none"
                         className="absolute inset-0 w-full h-full object-cover"
                     >
                         <source src="/videos/planoa3dsinmarcacomp.mp4" type="video/mp4" />
@@ -263,13 +265,17 @@ export default function StackingCardsSection() {
                                         <div className={`w-full grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center ${!isEven ? "direction-rtl" : ""}`}>
                                             {/* IMAGE COLUMN */}
                                             <div
-                                                className={`md:col-span-5 overflow-hidden rounded-sm shadow-xl ${isEven ? "md:order-1" : "md:order-2"}`}
+                                                className={`md:col-span-5 overflow-hidden rounded-sm shadow-xl relative ${isEven ? "md:order-1" : "md:order-2"}`}
                                                 style={{ height: "clamp(180px, 36vh, 400px)" }}
                                             >
-                                                <img
+                                                <Image
                                                     src={tipo.image}
                                                     alt={tipo.title}
-                                                    className="w-full h-full object-cover"
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 42vw"
+                                                    className="object-cover"
+                                                    loading="lazy"
+                                                    quality={70}
                                                 />
                                             </div>
 
