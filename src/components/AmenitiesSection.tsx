@@ -258,7 +258,7 @@ export default function AmenitiesSection() {
                                 </div>
                                 {/* Tall rectangle */}
                                 <div className="gallery-item w-2/3 aspect-[4/5] overflow-hidden shadow-xl">
-                                    <img src="/images/baño.png" className="w-full h-full object-cover" alt="Amenidad" />
+                                    <img src="/images/amenity_bathroom.png" className="w-full h-full object-cover" alt="Amenidad" />
                                 </div>
                             </div>
                             {/* Wide image below */}

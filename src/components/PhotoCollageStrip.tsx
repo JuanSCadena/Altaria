@@ -31,7 +31,7 @@ const STRIP_2_PHOTOS: CollagePhoto[] = [
 ];
 
 const STRIP_3_PHOTOS: CollagePhoto[] = [
-    { src: "/images/baño.png", alt: "Privacidad", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.7, delay: 0 },
+    { src: "/images/amenity_bathroom.png", alt: "Privacidad", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.7, delay: 0 },
     { src: "/images/cocina.png", alt: "Vanguardia", aspect: "aspect-square", rotation: 0, parallaxSpeed: 1.2, delay: 0.1 },
     { src: "/images/habitacion.png", alt: "Descanso", aspect: "aspect-square", rotation: 0, parallaxSpeed: 0.9, delay: 0.2 },
 ];
