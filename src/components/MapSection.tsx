@@ -17,50 +17,14 @@ const GALLERY_PHOTOS = [
 
 export default function MapSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const pathRef = useRef<SVGPathElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const mapRef = useRef<HTMLDivElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
-    const arrowheadRef = useRef<SVGPathElement>(null);
     const photoRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // 1. Animate the SVG snake line on scroll
-            if (pathRef.current) {
-                const path = pathRef.current;
-                const length = path.getTotalLength();
-                gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
-
-                gsap.to(path, {
-                    strokeDashoffset: 0,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom 70%",
-                        scrub: 1,
-                        invalidateOnRefresh: true,
-                    }
-                });
-            }
-
-            // 1.1 Animate arrowhead reveal
-            if (arrowheadRef.current) {
-                gsap.fromTo(arrowheadRef.current,
-                    { opacity: 0 },
-                    {
-                        opacity: 1,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: sectionRef.current,
-                            start: "bottom 85%", // Appears when the line is almost done
-                            end: "bottom 70%",
-                            scrub: 1,
-                        }
-                    }
-                );
-            }
+            // Snake line animation is now handled by GlobalSnakeLine
 
             // 2. Text reveal
             if (titleRef.current) {
@@ -132,40 +96,7 @@ export default function MapSection() {
             ref={sectionRef}
             className="relative w-full bg-background-dark text-primary overflow-hidden"
         >
-            {/* ── SVG SNAKE LINE (Background Decorative) ── */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <svg
-                    viewBox="0 0 800 1200"
-                    fill="none"
-                    preserveAspectRatio="none"
-                    className="w-full h-full opacity-15 md:opacity-25 text-[#a7c080]"
-                >
-                    <path
-                        ref={pathRef}
-                        d="M400,0
-                           L400,80
-                           C400,160 50,200 200,300
-                           C350,400 750,400 600,500
-                           C450,600 50,600 200,700
-                           C350,800 750,800 600,900
-                           C450,1000 400,1050 400,1200"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        vectorEffect="non-scaling-stroke"
-                    />
-                    <path
-                        ref={arrowheadRef}
-                        d="M370,1160 L400,1200 L430,1160"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        vectorEffect="non-scaling-stroke"
-                    />
-                </svg>
-            </div>
+            {/* Snake line is now handled by the global GlobalSnakeLine component */}
 
             {/* ── MAIN CONTENT ── */}
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16">

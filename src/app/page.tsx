@@ -11,6 +11,7 @@ import StackingCardsSection from "@/components/StackingCardsSection";
 import MapSection from "@/components/MapSection";
 import ArtGridSection from "@/components/ArtGridSection";
 import PhotoCollageStrip from "@/components/PhotoCollageStrip";
+import GlobalSnakeLine from "@/components/GlobalSnakeLine";
 
 const VIDEOS = [
     "/videos/tomaaereasinmarcacomp.mp4",
@@ -51,7 +52,8 @@ export default function Home() {
             <Header />
             <main className="relative min-h-[200vh]">
 
-                {/* HERO SECTION */}
+                {/* Global decorative snake line that traverses the entire page */}
+                <GlobalSnakeLine />
                 <section ref={containerRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden">
 
                     {/* Background Loop Videos */}
@@ -86,16 +88,26 @@ export default function Home() {
 
                 <BenefitsSection />
 
-                <PhotoCollageStrip variant="strip1" />
+                <div id="strip1-collage">
+                    <PhotoCollageStrip variant="strip1" />
+                </div>
 
                 <LocationSection />
                 <AmenitiesSection />
 
-                <PhotoCollageStrip variant="strip2" />
+                <div id="strip2-collage">
+                    <PhotoCollageStrip variant="strip2" />
+                </div>
 
-                <StackingCardsSection />
-                <MapSection />
-                <ArtGridSection />
+                <div id="stacking-cards-section">
+                    <StackingCardsSection />
+                </div>
+                <div id="map-section-wrapper">
+                    <MapSection />
+                </div>
+                <div id="art-grid-wrapper">
+                    <ArtGridSection />
+                </div>
 
             </main>
         </SmoothScroll>

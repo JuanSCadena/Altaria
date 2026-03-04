@@ -10,7 +10,6 @@ if (typeof window !== "undefined") {
 
 export default function LocationSection() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const pathRef = useRef<SVGPathElement>(null);
     const imageWrapperRef = useRef<HTMLDivElement>(null);
     const q1Ref = useRef<HTMLDivElement>(null);
     const q2Ref = useRef<HTMLDivElement>(null);
@@ -18,24 +17,7 @@ export default function LocationSection() {
 
     useEffect(() => {
         let ctx = gsap.context(() => {
-            // 1. Draw the SVG line as user scrolls down
-            if (pathRef.current) {
-                const path = pathRef.current;
-                const length = path.getTotalLength();
-
-                gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
-
-                gsap.to(path, {
-                    strokeDashoffset: 0,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 20%", // Early start to draw the transition
-                        end: "bottom 95%",
-                        scrub: true,
-                    }
-                });
-            }
+            // Line animation is now handled by GlobalSnakeLine
 
             // 2. Fade in preliminary questions
             gsap.from(q1Ref.current, {
@@ -95,44 +77,9 @@ export default function LocationSection() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative w-full bg-background-dark text-primary py-32 overflow-hidden z-10">
+        <section ref={containerRef} id="location-section" className="relative w-full bg-background-dark text-primary py-32 overflow-hidden z-10">
 
-            {/* BACKGROUND CONTINUOUS ARROW PATH */}
-            <div className="absolute inset-x-0 top-0 h-[100%] pointer-events-none z-0 flex justify-center">
-                <svg
-                    viewBox="0 0 1000 1500"
-                    fill="none"
-                    preserveAspectRatio="xMidYMin slice"
-                    className="w-full h-full max-w-5xl opacity-20 md:opacity-40 text-[#a7c080]"
-                >
-                    {/* NEW PATH: Combines the curly transition arrow + the meandering line into ONE path */}
-                    <path
-                        ref={pathRef}
-                        d="M500,0 
-                           C520,10 540,30 520,55 
-                           C500,80 460,100 480,125 
-                           C500,150 520,130 500,160 
-                            L500,200 
-                           C600,300 750,450 600,600 
-                           C450,750 200,800 350,1100 
-                           C400,1200 400,1200 350,1230 
-                           C200,1300 450,1400 350,1480"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-
-                    {/* ArrowHead at the end of the location path */}
-                    <path
-                        d="M335,1455 L350,1480 L365,1455"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                </svg>
-            </div>
+            {/* Background line is now handled by the global GlobalSnakeLine component */}
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
 
