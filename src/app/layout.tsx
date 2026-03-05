@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${zalandoFont.variable} font-sans bg-primary text-background-dark selection:bg-background-dark selection:text-primary overflow-x-hidden min-h-screen antialiased`}>
+            <body className={`${zalandoFont.variable} font-sans bg-background-dark text-primary selection:bg-background-dark selection:text-primary overflow-x-hidden min-h-screen antialiased`}>
                 {children}
             </body>
         </html>
